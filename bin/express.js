@@ -17,8 +17,7 @@ const app = express();
 
 // Json e Cors
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 
 // Conectando
 mongoose.connect(variables.Database.connection, {
