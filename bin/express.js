@@ -27,6 +27,9 @@ mongoose.connect(variables.Database.connection, {
   useUnifiedTopology: true
 });
 
+app.get("/", function(req, res) {
+  res.redirect("/todo");
+});
 app.use("/api/user", userRouter);
 app.use("/api/career", careerRouter);
 app.use("/api/formation", formationRouter);
