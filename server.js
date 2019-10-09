@@ -3,6 +3,4 @@
 const app = require("./bin/express");
 const variables = require("./bin/configuration/variables");
 
-app.listen(variables.Api.port, () => {
-  console.info(`Api inicializada com sucesso na porta ${variables.Api.port}`);
-});
+app.listen(process.env.PORT, "0.0.0.0");
