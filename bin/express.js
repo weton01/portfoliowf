@@ -17,7 +17,8 @@ const app = express();
 
 // Json e Cors
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Conectando
 mongoose.connect(variables.Database.connection, {
@@ -26,9 +27,6 @@ mongoose.connect(variables.Database.connection, {
   useUnifiedTopology: true
 });
 
-app.get("/", function(req, res) {
-  res.redirect("/todo");
-});
 app.use("/api/user", userRouter);
 app.use("/api/career", careerRouter);
 app.use("/api/formation", formationRouter);

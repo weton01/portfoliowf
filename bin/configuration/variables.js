@@ -1,6 +1,6 @@
 const variables = {
   Api: {
-    port: process.env.port || "8080"
+    port: process.env.port || "3000"
   },
   Database: {
     connection:
